@@ -9,17 +9,17 @@ public class Main {
         }
     }
 
-    public int[] solution(int N, int[] A) {
-        int[] counters = new int[N];
+    public int[] solution(int valueN, int[] valueMatrix) {
+        int[] counters = new int[valueN];
         int maxCounter = 0;
         int currentMax = 0;
 
-        for (int i = 0; i < A.length; i++) {
-            int X = A[i];
-            if (X >= 1 && X <= N) {
+        for (int i = 0; i < valueMatrix.length; i++) {
+            int X = valueMatrix[i];
+            if (X >= 1 && X <= valueN) {
                 counters[X-1] = increaseCounter(counters[X-1], currentMax);
                 maxCounter = Math.max(maxCounter, counters[X-1]);
-            } else if (X == N + 1) {
+            } else if (X == valueN + 1) {
                 currentMax = maxCounter;
             }
         }
